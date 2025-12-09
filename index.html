@@ -1,25 +1,59 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Tetris</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <div class="game-container">
-        <h1>테트리스</h1>
-        <div id="score">점수: 0</div>
-        <div id="grid">
-        </div>
-        
-        <button id="start-button">시작 / 일시정지</button>
-        
-        <div class="controls">
-            <button id="rotate">회전</button>
-            <button id="left">⬅️</button>
-            <button id="right">➡️</button>
-            <button id="down">⬇️</button>
-        </div>
-    </div>
-    <script src="script.js"></script> </body>
-</html>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #333;
+    font-family: sans-serif;
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#grid {
+    /* 가로 10칸, 세로 20칸 (각 칸 20px) */
+    width: 200px; 
+    height: 400px; 
+    display: flex;
+    flex-wrap: wrap; 
+    border: 5px solid #00f;
+    margin: 20px auto;
+    background-color: #000;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #111;
+}
+
+/* 블록 색상 정의 (클래스 이름은 script.js에 정의된 colors와 일치해야 합니다) */
+.i { background-color: cyan; border: 3px outset darkcyan; }
+.j { background-color: blue; border: 3px outset darkblue; }
+.l { background-color: orange; border: 3px outset darkorange; }
+.o { background-color: yellow; border: 3px outset goldenrod; }
+.s { background-color: lime; border: 3px outset darkgreen; }
+.t { background-color: purple; border: 3px outset indigo; }
+.z { background-color: red; border: 3px outset darkred; }
+
+.controls button, #start-button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+}
+
+#start-button {
+    background-color: green;
+    width: 200px;
+    margin: 15px auto;
+}
